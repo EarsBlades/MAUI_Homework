@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.Calculator"
+             xmlns:viewmodel="clr-namespace:MauiApp1.ViewModel"
+             xmlns:model="clr-namespace:MauiApp1.Model"
+             x:DataType="viewmodel:CalculatorSetting">
+    <ContentPage.Content>
+        <Grid
+            RowDefinitions="2.5*, *, *, *, *"
+            ColumnDefinitions="*, *, *, *">
+
+            <Button Grid.Column="0" Grid.Row="1" Text="7" Command="{Binding AddNumbers}" CommandParameter="7"/>
+            <Button Grid.Column="1" Grid.Row="1" Text="8" Command="{Binding AddNumbers}" CommandParameter="8"/>
+            <Button Grid.Column="2" Grid.Row="1" Text="9" Command="{Binding AddNumbers}" CommandParameter="9"/>
+            <Button Grid.Column="0" Grid.Row="2" Text="4" Command="{Binding AddNumbers}" CommandParameter="4"/>
+            <Button Grid.Column="1" Grid.Row="2" Text="5" Command="{Binding AddNumbers}" CommandParameter="5"/>
+            <Button Grid.Column="2" Grid.Row="2" Text="6" Command="{Binding AddNumbers}" CommandParameter="6"/>
+            <Button Grid.Column="0" Grid.Row="3" Text="1" Command="{Binding AddNumbers}" CommandParameter="1"/>
+            <Button Grid.Column="1" Grid.Row="3" Text="2" Command="{Binding AddNumbers}" CommandParameter="2"/>
+            <Button Grid.Column="2" Grid.Row="3" Text="3" Command="{Binding AddNumbers}" CommandParameter="3"/>
+            <Button Grid.Column="1" Grid.Row="4" Text="0" Command="{Binding AddNumbers}" CommandParameter="0"/>
+
+            <Button Grid.Column="3" Grid.Row="3" BorderWidth="1" Text="=" FontSize="20" Command="{Binding Eq}"/>
+            <Button Grid.Column="4" Grid.Row="2" BorderWidth="1" Text="-" FontSize="20" Command="{Binding AddCharSymbol}" CommandParameter='-'/>
+            <Button Grid.Column="3" Grid.Row="4" BorderWidth="1" Text="AC" FontSize="20" Command="{Binding DeleteNumbers}"/>
+            <Button Grid.Column="3" Grid.Row="1" BorderColor="Black"  BorderWidth="1" Text="+" FontSize="20" Command="{Binding AddCharSymbol}" CommandParameter="+"/>
+            <Button Grid.Column="0" Grid.Row="4" BorderColor="Black"  BorderWidth="1" Text="÷" FontSize="25" Command="{Binding AddCharSymbol}" CommandParameter="/"/>
+            <Button Grid.Column="2" Grid.Row="4" BorderColor="Black"  BorderWidth="1" Text="×" FontSize="20" Command="{Binding AddCharSymbol}" CommandParameter="*"/>
+
+            <Label Text="{Binding DisplayTextNumber}" Grid.ColumnSpan="4" FontSize ="40" HorizontalTextAlignment="End" VerticalTextAlignment="End" Margin="0,0,20,10"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
